@@ -75,4 +75,4 @@ client.on('voiceStateUpdate', async (old,update)=>{
     //voice_generator.execute(old,update,client,db);
     //
 });
-client.login("Nzk4MTg0MTg5NTA1MDQ0NTAw.X_xU9A.ZNN-sh-VY7En6TxgvWxj_TyYYIA");
+client.login(config.token);
