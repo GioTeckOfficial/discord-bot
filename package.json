@@ -1,0 +1,27 @@
+{
+  "name": "gioteckjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.3",
+    "bufferutil": "^4.0.3",
+    "discord.js": "^12.5.1",
+    "erlpack": "github:discord/erlpack",
+    "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "libsodium-wrappers": "^0.7.8",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.6.3",
+    "mongojs": "^3.1.0",
+    "nodemon": "^2.0.7",
+    "utf-8-validate": "^5.0.4",
+    "ytdl-core": "^4.4.2",
+    "zlib-sync": "^0.1.7"
+  }
+}
