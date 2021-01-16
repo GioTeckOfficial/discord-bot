@@ -8,7 +8,7 @@ Da questo repository si può scaricare il bot e usarlo nel proprio server con tu
 
 #### Come installarlo
 
-Per installare il bot bisogna installare prima [Node.JS](https://nodejs.org) (=>14.x)sul proprio server/PC(sconsigliato).
+Per installare il bot bisogna installare prima [Node.JS](https://nodejs.org) (=>14.x) e [MongoDB](https://mongodb.org) sul proprio server/PC(sconsigliato).
 
 Poi si deve scaricare il bot (dalla branchia "stable") in formato ZIP, decomprimere l'archivio in una cartella vuota e aprire un terminale.
 
