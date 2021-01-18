@@ -1,7 +1,16 @@
 module.exports={
     name:"voice_generator",
-    execute(old,update,client,db){
+    execute(old,update,client){
+        const mongojs=require("mongojs");
+        const db=mongojs("gioteckjs-ds");
         const coll=db.collection(`guild_${update.guild.id}`);
+        if(!old.channelID){
+            const voice_create=require("./voice_create.js");
+            //voice_create.execute(old,update,coll);
+        }
+    }
+}
+/*const coll=db.collection(`guild_${update.guild.id}`);
         coll.find({tempchannelID:update.channel.id},async (err,docs)=>{
             if(docs!==[]){
                 const voice=await update.guild.channels
@@ -27,6 +36,4 @@ module.exports={
             }
         });
 
-
-    }
-}
+*/

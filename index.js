@@ -67,12 +67,10 @@ client.on('message', async message => {
             message.channel.send(embed);
         }
     });
-	//if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
 });
 client.on('voiceStateUpdate', async (old,update)=>{
     const voice_generator=require("./voice/index.js");
-    //voice_generator.execute(old,update,client,db);
-    //
+    //voice_generator.execute(old,update,client);
 });
 client.login(config.token);

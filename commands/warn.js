@@ -4,10 +4,41 @@ module.exports = {
     name:"warn",
     dscription:"Warn a member for some reason if provided",
     execute(client,message,args){
-        if(!message.guild) return message.reply("Comando disponibile solo se usato in un server!");
+        if(!message.guild){
+            let embed=new ds.MessageEmbed()
+                .setTitle(":x: Errore!")
+                .setDescription("Non puoi usare questo comando in chat privata!");
+                message.reply(embed);
+        }
         const mongojs=require("mongojs");
         const db=mongojs("gioteckjs-ds");
         const coll=db.collection(`guild_${message.guild.id}`);
+        switch (args[0]) {
+            case msg.mentions.users.first():
+                    let reason=args[1];
+                    if(!args[1]) return reason="Non specificato!";
+                    coll.findAndModify({
+                        query:{
+                            type:"member",
+                            memberID:`${msg.mentions.users.first().id}`
+                        },
+                        update:{
+                            $inc:{warn:1},
+                            $set:{lastWarnReason:`${reason}`},
+                        }
+                    },(err,docs)=>{
+                        
+                    });
+                break;
+        
+            default:
+                let embed=new ds.MessageEmbed()
+                .setTitle(":x: ERRORE!")
+                .setDescription("Non hai menzionato nessuno o hai sbagliato la sintassi")
+                .setFooter(client.user.tag);
+                message.reply(embed);
+                break;
+        }
         /*const user=message.mentions.users.first();
         switch(args[0]){
             case msg.mentions.users.first():
